@@ -175,10 +175,10 @@ describe("PATCH /todos/:id", () =>
     {
         it("should update the todo", (done) =>
             {
-                var hexId = todos[0]._id.toHexString();
+                var hexId1 = todos[0]._id.toHexString();
 
                 request(app)
-                    .patch("/todos/"+hexId)
+                    .patch("/todos/"+hexId1)
                     .send(
                         {
                             text:"Updated text",
@@ -194,10 +194,10 @@ describe("PATCH /todos/:id", () =>
             });
         it("should clear completedAt when todo is not completed", (done) =>
             {
-                var hexId = todos[1]._id.toHexString();
+                var hexId2 = todos[1]._id.toHexString();
 
                 request(app)
-                    .patch("/todos/"+hexId)
+                    .patch("/todos/"+hexId2)
                     .send(
                         {
                             text:"Updated text 2",
